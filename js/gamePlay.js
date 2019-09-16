@@ -12,10 +12,10 @@ const gamePlay = {
     this.load.image('footer', 'images/bg/footer.png');
     this.load.spritesheet('player', 'images/player.png', {frameWidth: 144, frameHeight: 120});
 
-    this.load.image('rock3', 'images/item-level-1-branch.png')
     this.load.image('rock1', 'images/item-level-1-rock.png')
-    this.load.image('rock4', 'images/item-level-2-smoke-lg.png')
     this.load.image('rock2', 'images/item-level-2-smoke-sm.png')
+    this.load.image('rock3', 'images/item-level-1-branch.png')
+    this.load.image('rock4', 'images/item-level-2-smoke-lg.png')
     this.load.image('monster31', 'images/item-level-3-fire-lg.png')
     this.load.image('monster32', 'images/item-level-3-fire-sm.png')
     this.load.image('endTitle', 'images/ui/txt-congratulations.png')
@@ -112,6 +112,9 @@ const gamePlay = {
       btnTryAgain.setScale(0.6);
       btnTryAgain.setInteractive();
       btnTryAgain.on('pointerdown', () => this.scene.start('gameStart'));
+      this.input.keyboard.on('keydown-SPACE', () => {
+        this.scene.start('gamePlay');
+      })
     }
 
     // 產生怪物
